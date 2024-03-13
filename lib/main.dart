@@ -1,12 +1,26 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterlearnstation/product/const.dart';
 import 'package:flutterlearnstation/product/services/notification_services.dart';
 import 'package:flutterlearnstation/product/widget/no_network_widget.dart';
-import 'package:flutterlearnstation/screen/network_yonetimi_calismasi/network_page.dart';
+import 'package:flutterlearnstation/screen/localization_calismasi/main_View.dart';
+// import 'package:flutterlearnstation/screen/network_yonetimi_calismasi/network_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+// import 'package:flutterlearnstation/screen/refresh_indicator_calismasi/refresh_indicator_view.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   NotificationService().initNotification();
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+  await Hive.initFlutter();
+  var box = await Hive.openBox('myBox');
+
+  runApp(EasyLocalization(
+      fallbackLocale: const Locale('en', 'US'),
+      saveLocale: true,
+      supportedLocales: Appconst.supportedLocales,
+      path: Appconst.path,
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(centerTitle: true),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
@@ -31,7 +46,10 @@ class MyApp extends StatelessWidget {
           ],
         );
       },
-      home: const NetworkChangeView(),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      home: const DilDegis(),
     );
   }
 }
