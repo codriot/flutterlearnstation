@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterlearnstation/product/constant/enum/locale_enum.dart';
 
 class DilDegis extends StatelessWidget {
   const DilDegis({super.key});
@@ -16,25 +17,25 @@ class DilDegis extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.setLocale(const Locale('en', 'US'));
+                context.setLocale(Locales.en.locale);
               },
               child: const Text('English'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.setLocale(const Locale('tr', 'TR'));
+                context.setLocale(Locales.tr.locale);
               },
               child: const Text('Türkçe'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.setLocale(const Locale('ar', 'SA'));
+                context.setLocale(Locales.ar.locale);
               },
               child: const Text('العربية'),
             ),
             ElevatedButton(
               onPressed: () {
-                context.setLocale(const Locale('de', 'DE'));
+                context.setLocale(Locales.de.locale);
               },
               child: const Text('Deutsch'),
             ),

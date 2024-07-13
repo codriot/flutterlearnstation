@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterlearnstation/product/Init/product_localization.dart';
 import 'package:flutterlearnstation/product/const.dart';
 import 'package:flutterlearnstation/product/services/notification_services.dart';
 import 'package:flutterlearnstation/product/widget/no_network_widget.dart';
@@ -15,12 +16,7 @@ void main() async {
   await Hive.initFlutter();
   var box = await Hive.openBox('myBox');
 
-  runApp(EasyLocalization(
-      fallbackLocale: const Locale('en', 'US'),
-      saveLocale: true,
-      supportedLocales: Appconst.supportedLocales,
-      path: Appconst.path,
-      child: const MyApp()));
+  runApp(ProductLocalization(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
