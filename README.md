@@ -1,16 +1,17 @@
-# flutterlearnstation
+# Flutter Learning Station
 
-A new Flutter project.
+Bu depo, Flutter öğrenme sürecimde yazdığım kodları içerir. Temel Flutter konseptlerini ve örnek uygulamaları içerir.
 
-## Getting Started
+## Proje Yapısı
 
-This project is a starting point for a Flutter application.
+- **/basics**: Temel Flutter konseptlerini öğrenmek için basit uygulamalar içerir.
+- **/widgets**: Flutter widget'larını kullanarak farklı uygulamalar içerir.
+- **/state_management**: Flutter'da durum yönetimi tekniklerini öğrenmek için örnek uygulamalar içerir.
+- içeriklere lib/screen dosyasının içinde istediğiniz klasörden bakabilirsiniz
+## Katkıda Bulunma
 
-A few resources to get you started if this is your first Flutter project:
+Eğer bu depoda hata bulursanız veya iyileştirme önerileriniz varsa, lütfen bir pull request göndermekten çekinmeyin. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Lisans
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için projedeki lisans dosyasına bakınız.
